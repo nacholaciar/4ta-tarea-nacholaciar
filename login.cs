@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -66,6 +67,41 @@ namespace miapp_2
                 // user y pass son incorrectos
                 MessageBox.Show("Datos incorrectos");
             }
+        }
+
+        private bool ValidarUusuario(string nombreDeUsuario, string password)
+        {
+            bool resultado = false;
+
+            // conectar con la base de datos
+            string cadenConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection cn = new SqlConnection(cadenConexion);
+
+            string consulta = "SELECT * FROM usuarios WHERE NombreDeUsuario like '"+nombreDeUsuario+"' AND '"+password+"' like '"+"'";
+
+
+            cmd.Parameters.Clear();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = consulta;
+
+            cn.Open();
+            cmd.Connection = cn;
+            DataTable tabla = new DataTable();
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            if(tabla.Rows.Count == 1)
+            {
+                resultado = true;
+            }
+            else
+            {
+                resultaod = false;
+            }
+            return resultado;
+
         }
     }
 }
