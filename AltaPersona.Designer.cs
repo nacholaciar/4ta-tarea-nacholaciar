@@ -382,6 +382,7 @@ namespace miapp_2
             this.dgPersona.ReadOnly = true;
             this.dgPersona.Size = new System.Drawing.Size(343, 367);
             this.dgPersona.TabIndex = 26;
+            this.dgPersona.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPersona_CellContentClick);
             // 
             // documento
             // 

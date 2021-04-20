@@ -46,30 +46,47 @@ namespace miapp_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            usuario usu = new usuario(txtUsuario.Text, txtContraseña.Text);
-            //MessageBox.Show("Hola" + usu.NombreDeUsuario + " " + usu.Passw);
-
-
-            string usuCorrecto = "ignacio";
-            string passwordCorrecto = "1234";
 
             //validar para ejecutar/mostrar la ventana princial.cs
-            if (txtUsuario.Text.Equals(usuCorrecto) && txtContraseña.Text.Equals(passwordCorrecto))
+            if (txtUsuario.Text.Equals("") || txtContraseña.Text.Equals(""))
             {
                 // user y pass son correctos
-                MessageBox.Show("Datos correctos");
-                Principal ventana = new Principal(usu);
-                ventana.Show();
-                this.Hide();
+                // MessageBox.Show("Datos correctos");
+                // Principal ventana = new Principal(usu);
+                // ventana.Show();
+                // this.Hide();
+                MessageBox.Show("Ingrese nombre de usuario y password");
             }
             else
             {
                 // user y pass son incorrectos
-                MessageBox.Show("Datos incorrectos");
+                // MessageBox.Show("Datos incorrectos");
+                string nombreDeUsuario = txtUsuario.Text;
+                string password = txtContraseña.Text;
+                bool resultado = false;
+
+                resultado = ValidarUsuario(nombreDeUsuario, password);
+
+                if (resultado == true)
+                {
+                    usuario usu = new usuario(nombreDeUsuario, password);
+                    Principal ventana = new Principal(usu);
+                    ventana.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario inexistente");
+                }
+
+
             }
+
         }
 
-        private bool ValidarUusuario(string nombreDeUsuario, string password)
+        
+
+        private bool ValidarUsuario(string nombreDeUsuario, string password)
         {
             bool resultado = false;
 
@@ -78,8 +95,7 @@ namespace miapp_2
             SqlCommand cmd = new SqlCommand();
             SqlConnection cn = new SqlConnection(cadenConexion);
 
-            string consulta = "SELECT * FROM usuarios WHERE NombreDeUsuario like '"+nombreDeUsuario+"' AND '"+password+"' like '"+"'";
-
+            string consulta = "SELECT * FROM usuarios WHERE NombreDeUsuario like '"+nombreDeUsuario+"'AND Password like'"+password+"'";
 
             cmd.Parameters.Clear();
             cmd.CommandType = CommandType.Text;
@@ -88,7 +104,6 @@ namespace miapp_2
             cn.Open();
             cmd.Connection = cn;
             DataTable tabla = new DataTable();
-
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(tabla);
 
@@ -98,7 +113,7 @@ namespace miapp_2
             }
             else
             {
-                resultaod = false;
+                resultado = false;
             }
             return resultado;
 

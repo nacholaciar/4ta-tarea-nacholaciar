@@ -274,5 +274,10 @@ namespace miapp_2
 
             return resultado;
         }
+
+        private void dgPersona_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

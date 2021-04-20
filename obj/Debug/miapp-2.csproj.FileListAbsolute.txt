@@ -21,3 +21,15 @@ C:\Users\suco\Documents\repos\miapp-3\obj\Debug\miapp-2.csproj.GenerateResource.
 C:\Users\suco\Documents\repos\miapp-3\obj\Debug\miapp-2.csproj.CoreCompileInputs.cache
 C:\Users\suco\Documents\repos\miapp-3\obj\Debug\miapp-2.exe
 C:\Users\suco\Documents\repos\miapp-3\obj\Debug\miapp-2.pdb
+C:\Users\suco\Documents\repos\miapp-4\bin\Debug\miapp-2.exe.config
+C:\Users\suco\Documents\repos\miapp-4\bin\Debug\miapp-2.exe
+C:\Users\suco\Documents\repos\miapp-4\bin\Debug\miapp-2.pdb
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.csprojAssemblyReference.cache
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp_2.AltaPersona.resources
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp_2.login.resources
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp_2.Principal.resources
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp_2.Properties.Resources.resources
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.csproj.GenerateResource.cache
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.csproj.CoreCompileInputs.cache
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.exe
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.pdb
