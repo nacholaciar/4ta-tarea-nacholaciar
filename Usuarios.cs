@@ -93,7 +93,7 @@ namespace miapp_2
             }
             else
             {
-                if (txtContraseña.Equals(txtRepetirContraseña) == true)
+                if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
                 {
                     try
                     {
@@ -118,7 +118,7 @@ namespace miapp_2
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no existen");
+                    MessageBox.Show("Las contraseñas no coinciden");
                 }
             }
         }
