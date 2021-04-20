@@ -71,5 +71,18 @@ namespace miapp_2
         {
 
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombreDeUsuario.Text = "";
+            txtContraseña.Text = "";
+            txtRepetirContraseña.Text = "";
+        }
     }
 }

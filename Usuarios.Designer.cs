@@ -30,18 +30,19 @@ namespace miapp_2
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNombreDeUsuario = new System.Windows.Forms.TextBox();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnAltaUsuario = new System.Windows.Forms.Button();
             this.txtRepetirContraseña = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAltaUsuario = new System.Windows.Forms.Button();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNombreDeUsuario = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grillaUsuarios = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaUsuarios)).BeginInit();
@@ -49,6 +50,7 @@ namespace miapp_2
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.btnAltaUsuario);
             this.groupBox1.Controls.Add(this.txtRepetirContraseña);
             this.groupBox1.Controls.Add(this.label3);
@@ -65,39 +67,15 @@ namespace miapp_2
             this.groupBox1.Text = "Datos del Usuario";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // btnAltaUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre de Usuario:";
-            // 
-            // txtNombreDeUsuario
-            // 
-            this.txtNombreDeUsuario.Location = new System.Drawing.Point(218, 49);
-            this.txtNombreDeUsuario.Name = "txtNombreDeUsuario";
-            this.txtNombreDeUsuario.Size = new System.Drawing.Size(132, 30);
-            this.txtNombreDeUsuario.TabIndex = 1;
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(218, 96);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(132, 30);
-            this.txtContraseña.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(105, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Contraseña:";
+            this.btnAltaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaUsuario.Location = new System.Drawing.Point(368, 204);
+            this.btnAltaUsuario.Name = "btnAltaUsuario";
+            this.btnAltaUsuario.Size = new System.Drawing.Size(111, 31);
+            this.btnAltaUsuario.TabIndex = 6;
+            this.btnAltaUsuario.Text = "Alta Usuario";
+            this.btnAltaUsuario.UseVisualStyleBackColor = true;
             // 
             // txtRepetirContraseña
             // 
@@ -116,15 +94,39 @@ namespace miapp_2
             this.label3.TabIndex = 4;
             this.label3.Text = "Confirmar Contraseña:";
             // 
-            // btnAltaUsuario
+            // txtContraseña
             // 
-            this.btnAltaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAltaUsuario.Location = new System.Drawing.Point(368, 204);
-            this.btnAltaUsuario.Name = "btnAltaUsuario";
-            this.btnAltaUsuario.Size = new System.Drawing.Size(111, 31);
-            this.btnAltaUsuario.TabIndex = 6;
-            this.btnAltaUsuario.Text = "Alta Usuario";
-            this.btnAltaUsuario.UseVisualStyleBackColor = true;
+            this.txtContraseña.Location = new System.Drawing.Point(218, 96);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(132, 30);
+            this.txtContraseña.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(105, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Contraseña:";
+            // 
+            // txtNombreDeUsuario
+            // 
+            this.txtNombreDeUsuario.Location = new System.Drawing.Point(218, 49);
+            this.txtNombreDeUsuario.Name = "txtNombreDeUsuario";
+            this.txtNombreDeUsuario.Size = new System.Drawing.Size(132, 30);
+            this.txtNombreDeUsuario.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre de Usuario:";
             // 
             // groupBox2
             // 
@@ -176,6 +178,17 @@ namespace miapp_2
             this.Password.ReadOnly = true;
             this.Password.Width = 200;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(251, 204);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(111, 31);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,5 +222,6 @@ namespace miapp_2
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
