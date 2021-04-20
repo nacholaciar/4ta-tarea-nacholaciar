@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,47 @@ namespace miapp_2
 
         private void Usuarios_Load(object sender, EventArgs e)
         {
+            CargarGrilla();
+        }
+
+        private void CargarGrilla() 
+        {
+            string cadenConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenConexion);
+
+            try
+            {
+
+                // conectar con la base de datos
+                SqlCommand cmd = new SqlCommand();
+
+                string consulta = "SELECT * FROM usuarios";
+
+                cmd.Parameters.Clear(); // limpiar todos los parametros del objeto cmd
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                grillaUsuarios.DataSource = tabla;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                // cierre de conexion de la bd
+                cn.Close();
+            }
 
         }
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {

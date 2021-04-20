@@ -41,5 +41,12 @@ namespace miapp_2
             AltaPersona ventana = new AltaPersona();
             ventana.Show();
         }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // esto me permite abrir el form recientemente creado desde otro from
+            Usuarios ventana = new Usuarios();
+            ventana.Show();
+        }
     }
 }

@@ -33,3 +33,4 @@ C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.csproj.GenerateResource.
 C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.csproj.CoreCompileInputs.cache
 C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.exe
 C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp-2.pdb
+C:\Users\suco\Documents\repos\miapp-4\obj\Debug\miapp_2.Usuarios.resources

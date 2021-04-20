@@ -38,13 +38,13 @@ namespace miapp_2
             this.label3 = new System.Windows.Forms.Label();
             this.btnAltaUsuario = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grillaUsuarios = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreDeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -128,7 +128,7 @@ namespace miapp_2
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.grillaUsuarios);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(26, 311);
             this.groupBox2.Name = "groupBox2";
@@ -137,21 +137,21 @@ namespace miapp_2
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Listado de Usuarios";
             // 
-            // dataGridView1
+            // grillaUsuarios
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grillaUsuarios.AllowUserToAddRows = false;
+            this.grillaUsuarios.AllowUserToDeleteRows = false;
+            this.grillaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.NombreDeUsuario,
             this.Password});
-            this.dataGridView1.Location = new System.Drawing.Point(26, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(396, 150);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.grillaUsuarios.Location = new System.Drawing.Point(26, 45);
+            this.grillaUsuarios.Name = "grillaUsuarios";
+            this.grillaUsuarios.ReadOnly = true;
+            this.grillaUsuarios.Size = new System.Drawing.Size(396, 150);
+            this.grillaUsuarios.TabIndex = 0;
+            this.grillaUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id
             // 
@@ -189,7 +189,7 @@ namespace miapp_2
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grillaUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,7 +205,7 @@ namespace miapp_2
         private System.Windows.Forms.TextBox txtNombreDeUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grillaUsuarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreDeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;

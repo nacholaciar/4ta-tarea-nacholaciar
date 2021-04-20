@@ -31,13 +31,13 @@ namespace miapp_2
         {
             this.lblBienvenida = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaPersonaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,23 @@ namespace miapp_2
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultaToolStripMenuItem});
+            this.usuarioToolStripMenuItem.Image = global::miapp_2.Properties.Resources.user;
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.usuarioToolStripMenuItem.Text = "Usuarios";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
+            // 
+            // consultaToolStripMenuItem
+            // 
+            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // alumnosToolStripMenuItem
             // 
@@ -98,25 +115,9 @@ namespace miapp_2
             // altaPersonaToolStripMenuItem
             // 
             this.altaPersonaToolStripMenuItem.Name = "altaPersonaToolStripMenuItem";
-            this.altaPersonaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.altaPersonaToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.altaPersonaToolStripMenuItem.Text = "Alta persona";
             this.altaPersonaToolStripMenuItem.Click += new System.EventHandler(this.altaPersonaToolStripMenuItem_Click);
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaToolStripMenuItem});
-            this.usuarioToolStripMenuItem.Image = global::miapp_2.Properties.Resources.user;
-            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.usuarioToolStripMenuItem.Text = "Usuarios";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
-            // 
-            // consultaToolStripMenuItem
-            // 
-            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.consultaToolStripMenuItem.Text = "Consulta";
             // 
             // Principal
             // 
