@@ -93,9 +93,28 @@ namespace miapp_2
             }
             else
             {
-                if (txtContraseña.Equals(txtRepetirContraseña))
+                if (txtContraseña.Equals(txtRepetirContraseña) == true)
                 {
+                    try
+                    {
+                        bool resultado = InsertarUsuario(txtNombreDeUsuario.Text, txtContraseña.Text);
+                        if (resultado)
+                        {
+                            MessageBox.Show("Usuario dado de dalta con exito");
+                            LimpiarCampos();
+                            txtNombreDeUsuario.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al insertar nuevo usuario");
+                        }
+                    }
+                    catch (Exception)
+                    {
 
+                        MessageBox.Show("Error al insertar nuevo usuario");
+                        txtNombreDeUsuario.Focus();
+                    }
                 }
                 else
                 {
