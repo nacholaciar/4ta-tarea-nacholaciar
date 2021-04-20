@@ -76,6 +76,7 @@ namespace miapp_2
             this.btnAltaUsuario.TabIndex = 6;
             this.btnAltaUsuario.Text = "Alta Usuario";
             this.btnAltaUsuario.UseVisualStyleBackColor = true;
+            this.btnAltaUsuario.Click += new System.EventHandler(this.btnAltaUsuario_Click);
             // 
             // txtRepetirContraseña
             // 
@@ -197,6 +198,7 @@ namespace miapp_2
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Usuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.Usuarios_Load);
             this.groupBox1.ResumeLayout(false);

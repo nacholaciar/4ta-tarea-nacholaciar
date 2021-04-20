@@ -23,7 +23,7 @@ namespace miapp_2
             CargarGrilla();
         }
 
-        private void CargarGrilla() 
+        private void CargarGrilla()
         {
             string cadenConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenConexion);
@@ -84,5 +84,60 @@ namespace miapp_2
             txtContraseña.Text = "";
             txtRepetirContraseña.Text = "";
         }
+
+        private void btnAltaUsuario_Click(object sender, EventArgs e)
+        {
+            if (txtNombreDeUsuario.Text.Equals(""))
+            {
+                MessageBox.Show("Ingrese nombre de usurio");
+            }
+            else
+            {
+                if (txtContraseña.Equals(txtRepetirContraseña))
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no existen");
+                }
+            }
+        }
+
+
+        private bool InsertarUsuario(string nombreDeUsuario, string password)
+        {
+            string cadenConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenConexion);
+            bool resultado = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "INSERT INTO usuarios (NombreDeUsuario, Password) VALUE(@nombreUsu, @pass)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombreUsu", nombreDeUsuario);
+                cmd.Parameters.AddWithValue("@pass", Password);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            return resultado;
+        }
+
     }
 }
