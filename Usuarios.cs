@@ -93,14 +93,14 @@ namespace miapp_2
             }
             else
             {
-                if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+                if (txtContraseña.Text.Equals(txtRepetirContraseña.Text))
                 {
                     try
                     {
                         bool resultado = InsertarUsuario(txtNombreDeUsuario.Text, txtContraseña.Text);
                         if (resultado)
                         {
-                            MessageBox.Show("Usuario dado de dalta con exito");
+                            MessageBox.Show("Usuario dado de alta con exito");
                             LimpiarCampos();
                             txtNombreDeUsuario.Focus();
                         }
@@ -109,10 +109,12 @@ namespace miapp_2
                             MessageBox.Show("Error al insertar nuevo usuario");
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
 
-                        MessageBox.Show("Error al insertar nuevo usuario");
+                        // MessageBox.Show("Error al insertar nuevo usuario");
+                        MessageBox.Show(ex.Message);
+
                         txtNombreDeUsuario.Focus();
                     }
                 }
@@ -132,10 +134,10 @@ namespace miapp_2
             try
             {
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO usuarios (NombreDeUsuario, Password) VALUE(@nombreUsu, @pass)";
+                string consulta = "INSERT INTO usuarios (NombreDeUsuario, Password) VALUES(@nombreUsu, @pass)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombreUsu", nombreDeUsuario);
-                cmd.Parameters.AddWithValue("@pass", Password);
+                cmd.Parameters.AddWithValue("@pass", password);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
