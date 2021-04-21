@@ -102,6 +102,7 @@ namespace miapp_2
                         {
                             MessageBox.Show("Usuario dado de alta con exito");
                             LimpiarCampos();
+                            CargarGrilla();
                             txtNombreDeUsuario.Focus();
                         }
                         else
@@ -114,7 +115,6 @@ namespace miapp_2
 
                         // MessageBox.Show("Error al insertar nuevo usuario");
                         MessageBox.Show(ex.Message);
-
                         txtNombreDeUsuario.Focus();
                     }
                 }
